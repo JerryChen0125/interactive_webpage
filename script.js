@@ -124,3 +124,15 @@ imageContainer.addEventListener('touchstart', function(e) {
 document.addEventListener('touchmove', function(e) {
     if (dragging && gameRunning) {
         const newX = e.touches[0].clientX - offsetX;
+        const newY = e.touches[0].clientY - offsetY;
+        imageContainer.style.left = newX + 'px';
+        imageContainer.style.top = newY + 'px';
+
+        // 更新圖片的偏移量
+        imageOffsetX = newX;
+        imageOffsetY = newY;
+
+        e.preventDefault(); // 防止觸控滑動默認行為
+        checkAlignment();
+    }
+});
