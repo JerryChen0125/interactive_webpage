@@ -112,3 +112,15 @@ zoomOutBottomRightButton.addEventListener('click', zoomOut);
 imageContainer.addEventListener('mousedown', handleMouseDown);
 document.addEventListener('mousemove', handleMouseMove);
 document.addEventListener('mouseup', handleMouseUp);
+
+// 觸控開始時
+imageContainer.addEventListener('touchstart', function(e) {
+    dragging = true;
+    offsetX = e.touches[0].clientX - imageContainer.getBoundingClientRect().left;
+    offsetY = e.touches[0].clientY - imageContainer.getBoundingClientRect().top;
+});
+
+// 觸控移動時
+document.addEventListener('touchmove', function(e) {
+    if (dragging && gameRunning) {
+        const newX = e.touches[0].clientX - offsetX;
