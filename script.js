@@ -65,7 +65,7 @@ function checkAlignment() {
         imageContainer.style.left = `${imageOffsetX + offsetX}px`;
         imageContainer.style.top = `${imageOffsetY + offsetY}px`;
 
-        alert('恭喜你完成這個遊戲，這是齊天大聖的生日0725，接下來便去玩玩其他組別製作的遊戲吧！'); // 對齊時發送訊息
+        alert('恭喜你完成這個遊戲，西鎮堂建立於1851年，這是齊天大聖的神像，接下來便去玩玩其他組別製作的遊戲吧！'); // 對齊時發送訊息
         gameRunning = false; // 停止遊戲
     }
 }
